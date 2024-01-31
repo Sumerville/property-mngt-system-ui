@@ -1,0 +1,77 @@
+@import"../../Abstracts/colors";
+@import"../../Abstracts/mixins";
+@import"../../Abstracts/variables";
+
+.category-main{
+   display: $flex;
+   position: sticky;
+   justify-content: $justifyContent-center;
+   align-items: center;
+   flex-direction: column;
+}
+.category-label-container{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 20px;
+  //  -webkit-user-select: none;
+  //  -moz-user-select: none;
+  //  -ms-user-select:none;
+
+}
+.category-label-container label{
+  margin-bottom: 20px;
+}
+.category-title{
+  font-size: $spacing-md + 2px;
+  font-weight: bold;
+  color: $tomato;
+  margin-bottom: $spacing-md;
+}
+
+ .check-box {
+position: absolute;
+left: 0;
+width: 20px;
+height: 20px;
+background: #eee;
+border-radius: 50%;
+}
+.category-label-container input {
+ position: absolute;
+opacity: 0;
+ cursor: pointer;
+  
+}
+
+
+.category-label-container:hover input~ .check-box{
+  background-color: #ccc;
+}
+
+
+.category-label-container input:checked ~ .check-box{
+  background-color: $tomato;
+}
+
+.check-box:after{
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.category-label-container input:checked ~ .check-box::after{
+
+  display: block;
+
+}
+
+.category-label-container .check-box::after{
+  top: 6px;
+  left: 6px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: $white;
+}

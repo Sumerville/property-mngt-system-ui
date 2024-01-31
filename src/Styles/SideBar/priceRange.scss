@@ -1,0 +1,84 @@
+
+@import"../../Abstracts/colors";
+@import"../../Abstracts/mixins";
+@import"../../Abstracts/variables";
+.pricerange-main{
+  position: sticky;
+    display: $flex;
+    justify-content: $justifyContent-center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.price-label-container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 20px;
+    //  -webkit-user-select: none;
+    //  -moz-user-select: none;
+    //  -ms-user-select:none;
+  
+  }
+  .price-label-container label{
+    margin-bottom: 20px;
+  }
+  .price-title{
+    font-size: $spacing-md + 2px;
+    font-weight: bold;
+    color: $tomato;
+    margin-bottom: $spacing-md;
+  }
+  
+   .check-box-p {
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: #eee;
+  border-radius: 50%;
+  }
+  .price-label-container input {
+   position: absolute;
+  opacity: 0;
+   cursor: pointer;
+    
+  }
+  
+  
+  .price-label-container:hover input~ .check-box-p{
+    background-color: #ccc;
+  }
+  
+  
+  .price-label-container input:checked ~ .check-box-p{
+    background-color: $tomato;
+  }
+  
+  .check-box-p:after{
+    content: '';
+    position: absolute;
+    display: none;
+  }
+  
+  .price-label-container input:checked ~ .check-box-p::after{
+  
+    display: block;
+  
+  }
+  
+  .price-label-container .check-box-p::after{
+    top: 6px;
+    left: 6px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: $white;
+  }
+  .naira-sign{
+    color: $tomato;
+    position: relative;
+    top: 3px;
+    font-size: 18px;
+  }

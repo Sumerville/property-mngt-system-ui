@@ -1,0 +1,101 @@
+@import"../Abstracts/colors";
+@import "../Abstracts/mixins";
+@import "../Abstracts/variables";
+
+
+.navbar-container {
+    top: 0;
+    position: fixed;
+    z-index: 900;
+    display: $flex;
+    align-items: center;
+    width: 100%;
+    height: $spacing-lg * 3;
+    background: $white;
+    -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+    box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+    border-radius: 3px;
+
+}
+
+.nav-left {
+    flex: 2;
+    margin-top: $spacing-lg;
+    margin-left: $spacing-md + 10px;
+    display: $flex;
+    gap: $spacing-sm;
+}
+.nav-left img{
+    width: $spacing-lg + 30px;
+    height: $spacing-lg + 30px;
+    margin-bottom: $spacing-md;
+}
+.nav-left span{
+margin-top: $spacing-md;
+color: $tomato;
+font-size: $spacing-md + 2px;
+letter-spacing: $spacing-xsm;
+}
+.nav-center {
+    flex: 2;
+    margin-top: 20px;
+
+}
+
+.nav-right {
+    flex: 0;
+    margin-top: 20px;
+    margin-right: 30px;
+}
+
+
+
+.nav-menu {
+    display: $flex;
+    justify-content: $justifyContent-even;
+}
+
+
+
+.nav-menu li {
+    list-style: none;
+    font-size: 20px;
+}
+
+.nav-links {
+    color: $tomato;
+    text-decoration: none;
+}
+
+.activated {
+    border-bottom: 4px solid $tomato;
+    color: $tomato;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.dropdown-control {
+    position: relative;
+    z-index: 1200;
+    display: none;
+}
+
+.nav-item {
+    text-decoration: none;
+}
+
+.log-out-icon {
+    font-size: 25px;
+    color: $tomato;
+}
+
+@media(max-width:766px) {
+    .dropdown-control {
+        display: block;
+
+    }
+
+    .nav-center {
+        display: none;
+    }
+}

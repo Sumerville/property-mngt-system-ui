@@ -1,0 +1,15 @@
+@import"../Abstracts/colors";
+@import"../Abstracts/mixins";
+@import"../Abstracts/variables";
+
+.sidebar-component{
+    width: 10%;
+    height: 100vh;
+    position: sticky;
+    padding: 50px;
+    background: rgba(225, 225, 225, 0.1);
+    box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.1);
+ 
+   border-radius: 3px;
+    overflow: hidden;
+}

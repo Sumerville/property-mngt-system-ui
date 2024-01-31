@@ -1,0 +1,62 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+@import "../Abstracts/colors";
+@import "../Abstracts/mixins";
+@import "../Abstracts/variables";
+
+.spinner-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $light-grey;
+    z-index: 1100;
+    opacity: 0.8;
+
+    .spinner {
+        width: 40px;
+        height: 40px;
+        display: $flex;
+        justify-content: $justifyContent-center;
+        align-items: center;
+        margin: auto;
+        margin-top: 30%;
+        overflow: hidden;
+        position: relative;
+
+        .spinner-sector {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 5px solid transparent;
+            border-top-color: $white;
+            border-bottom-color: $tomato;
+            border-left-color: $tomato;
+            border-right-color: $tomato;
+            animation: rotate 1s ease-in-out infinite;
+        }
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+@media(max-width:1024px){
+    .spinner{
+        margin-top: 50%;
+    }  
+}

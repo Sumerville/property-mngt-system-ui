@@ -1,0 +1,113 @@
+
+@import "../Abstracts/colors";
+@import "../Abstracts/mixins";
+@import "../Abstracts/variables";
+
+.preloader-container{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $light-grey;
+    z-index: 1100;
+    opacity: 0.8;
+}
+.preloader{
+position: absolute;
+top: 58%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 100px;
+height: 100px;
+}
+
+.preloader hr{
+    border: 0;
+    margin: 0;
+    width: 40%;
+    height: 40px;
+    position: absolute;
+    border-radius: 50%;
+    animation: spin 2s ease infinite;
+}
+
+.preloader :first-child{
+    background: $tomato;
+    animation-delay: -1.5s;
+}
+
+.preloader :nth-child(2){
+    background: $tomato;
+    animation-delay: -1s ;
+}
+
+.preloader :nth-child(3){
+    background: $tomato;
+    animation-delay: -0.5s ;
+}
+
+.preloader :last-child{
+    background: $tomato;
+
+}
+
+@keyframes spin{
+    0%, 100%{
+        transform: translate(0);
+    }
+    25%{
+        transform: translate(160%);
+    } 50%{
+        transform: translate(160%, 160%);
+    } 75%{
+        transform: translate(0, 160%);
+    }
+}
+
+@media(max-width:1024px){
+    .preloader hr{
+        width: 30%;
+    height: 30px; 
+    }
+}
+
+@media(max-width:768px){
+    .preloader hr{
+        width: 20%;
+    height: 20px; 
+    }
+    .preloader{
+        left: 53%;
+    }
+}
+
+@media(max-width:426px){
+    .preloader hr{
+        width: 20%;
+    height: 20px; 
+    }
+    .preloader{
+        left: 55%;
+    }
+}
+
+@media(max-width:426px){
+    .preloader hr{
+        width: 20%;
+    height: 20px; 
+    }
+    .preloader{
+        left: 57%;
+    }
+}
+
+@media(max-width:320px){
+    .preloader hr{
+        width: 20%;
+    height: 20px; 
+    }
+    .preloader{
+        left: 58%;
+    }
+}

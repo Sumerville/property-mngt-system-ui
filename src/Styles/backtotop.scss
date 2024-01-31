@@ -1,0 +1,30 @@
+
+@import "../Abstracts/colors";
+@import "../Abstracts/mixins";
+@import "../Abstracts/variables";
+
+.back-to-top-btn{
+    width: 30px;
+    height: 37px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    font-size: 35px;
+    color: $tomato;
+    background: transparent;
+    // border: 1px solid $tomato;
+    cursor: pointer;
+    z-index: 150;
+}
+
+@media(max-width:768px){
+    .back-to-top-btn{
+        right: 30px; 
+    }  
+}
+
+@media(max-width:425px){
+    .back-to-top-btn{
+        right: 10px; 
+    }  
+}

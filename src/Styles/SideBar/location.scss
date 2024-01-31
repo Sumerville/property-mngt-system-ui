@@ -1,0 +1,45 @@
+@import"../../Abstracts/colors";
+@import"../../Abstracts/mixins";
+@import"../../Abstracts/variables";
+
+.location-main {
+    display: $flex;
+    justify-content: $justifyContent-center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.location-items {
+    position: relative;
+    width: 100%;
+    left: 20%;
+    // display: $flex;
+    // flex-direction: column;
+    // justify-content: $justifyContent-center;
+    // align-items: center;
+}
+.location-title{
+    font-size: $spacing-md + 2px;
+  font-weight: bold;
+  color: $tomato;
+  margin-bottom: $spacing-md;
+}
+.location-items li {
+    list-style: none;
+    margin-bottom: $spacing-md;
+    cursor: pointer;
+  
+}
+.ghost-span{
+    position: absolute;
+    top: 0;
+    left: -15%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #eee;
+}
+
+// .location-items li:hover{
+//     border-left: 4px solid $tomato;
+// }

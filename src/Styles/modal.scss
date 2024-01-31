@@ -1,0 +1,38 @@
+@import "../Abstracts/colors";
+@import "../Abstracts/mixins";
+@import "../Abstracts/variables";
+
+.modal-background{
+    top: 0;
+    position: relative;
+    background: #fff;
+    box-shadow: 2px 10px 10px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: ease-in-out;
+    transition-duration: 0.4s;
+    transition-delay: 0.5s;
+    opacity: 0.98;
+  }
+.modal-container{
+    position: relative;
+    z-index: 1200;
+    width: 2000px;
+    top: 0;
+    height: 100vh;
+}
+.close-modal{
+  position: absolute;
+  z-index: 10;
+  width: 30%;
+ display: $flex;
+ justify-content: $justifyContent-center;
+ align-items: center;
+ color: black;
+}
+  .modal-body{
+    width: 100%;
+    top: 0;
+    height: 100%;
+    background: #fff;
+    
+    }

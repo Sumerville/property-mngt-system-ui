@@ -1,0 +1,29 @@
+@import "../../Abstracts/colors";
+@import "../../Abstracts/mixins";
+@import "../../Abstracts/variables";
+
+.sent-contents{
+    display: $flex;
+    gap: 5px;
+    // margin-bottom: 30px;
+    cursor: pointer;
+
+    
+    .sent-anchor{
+        // font-size: 25px;
+        position: absolute;
+        left: -20px;
+        color: $tomato;
+    }
+    .sent-span{
+        font-size: 18px;
+        color: $gray;
+    }
+}
+
+@media(max-width:805px){
+    .sent-contents{
+       display: $block;
+      
+    } 
+}

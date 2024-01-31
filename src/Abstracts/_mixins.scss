@@ -1,0 +1,9 @@
+@mixin btn ($primary, $white){
+
+    border-radius: $borderRadius-sm;
+  background-color: $primary; color:$white;
+  padding: $spacing-sm $spacing-lg; border-radius: $borderRadius-sm;
+  margin:$margiLeft; 
+  font-size: $spacing-sm +4px; cursor: pointer; outline: none;
+}
+

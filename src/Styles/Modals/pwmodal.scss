@@ -1,0 +1,99 @@
+@import "../../Abstracts/colors";
+@import "../../Abstracts/mixins";
+@import "../../Abstracts/variables";
+
+.reset-modal-background {
+    background: $white;
+    width: 100%;
+    height: 700px;
+    top: 0;
+    position: relative;
+    display: $flex;
+    justify-content: $justifyContent-center;
+    align-items: center;
+    z-index: 1500;
+}
+
+.reset-modal-btn {
+    margin: 30px;
+}
+
+.reset-btn-span {
+    color: $tomato;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.reset-title {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.reset-title p {
+    color: $gray;
+  text-align: justify;
+  padding: 15px;
+    font-size: 20px;
+}
+
+.reset-form-input {
+    margin-top: 30px;
+}
+.error-text{
+    color: red;
+    font-size: 14px;
+    margin: 15px 0;
+}
+.reset-form-input input {
+    width: 400px;
+    border: 1px solid $tomato;
+    outline: none;
+    height: 40px;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.reset-modal-body {
+    width: 600px;
+    height: 400px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    // border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: $flex;
+    flex-direction: column;
+    border-radius: 8px;
+}
+
+.reset-modal-container {
+    width: 100%;
+    margin: auto;
+    height: 100vh;
+    top: 0;
+    left: -1px;
+   background:$white;
+   
+    position: fixed;
+    border-radius: 10px;
+    z-index: 1500;
+}
+
+@media(max-width:700px) {
+    .reset-modal-body {
+        width: 80%;
+        margin: auto;
+    }
+    .reset-form-input input {
+        width: 100%;
+       
+    }
+}

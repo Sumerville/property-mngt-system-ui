@@ -1,0 +1,63 @@
+@import"../Abstracts/colors";
+@import"../Abstracts/mixins";
+@import"../Abstracts/variables";
+
+.search-container {
+    top: $spacing-md ;
+    width: 80%;
+    height: auto;
+    padding: $spacing-md;
+    margin: auto;
+    display: $flex;
+    justify-content: $justifyContent-even;
+    flex-direction: row;
+    position: relative;
+       background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+
+
+.searchbar{
+    width: 100%;
+    display: $flex;
+    gap:$spacing-md;
+    height: 50px;
+    background-color: $white;
+    border: 2px solid $tomato;
+}
+.searchbar-item{
+    width: 100%;
+    display: $flex;
+    justify-content: $justifyContent-center;
+    align-items: center;
+
+}
+.searchbar-item select{
+
+    border: none;
+    outline: none;
+  
+}
+.searchbar-item option{
+
+     border: none;
+     outline: none;
+     background-color:$white;
+     color: $tomato;
+     border-bottom: 1px solid $tomato;
+     padding: 20px;
+ }
+@media(max-width:768px) {
+    .search-container {
+        display: $flex;
+        justify-content: $justifyContent-even;
+        gap: 10px;
+        flex-direction: column;
+    }
+}

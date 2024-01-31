@@ -1,0 +1,22 @@
+@import "../../Abstracts/colors";
+@import "../../Abstracts/mixins";
+@import "../../Abstracts/variables";
+
+.inbox-contents{
+    display: $flex;
+    gap: 5px;
+    // margin-bottom: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+
+    .inbox-anchor{
+        // font-size: 22px;
+        position: absolute;
+        left: -20px;
+        color: $tomato;
+    }
+    .inbox-span{
+        font-size: 18px;
+        color: $gray;
+    }
+}

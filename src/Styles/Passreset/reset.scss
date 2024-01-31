@@ -1,0 +1,49 @@
+@import "../../Abstracts/colors";
+@import "../../Abstracts/mixins";
+@import "../../Abstracts/variables";
+
+.reset-main {
+    height: 90vh;
+    display: $flex;
+    gap: 100px;
+    padding-top: 50px;
+}
+
+.reset-left {
+    width: 40%;
+    margin: 100px 30px;
+    height: 500px;
+    border: 1px solid $tomato;
+    border-radius: 10px;
+}
+
+.pass-rest {
+    padding-top: 100px;
+    display: $flex;
+
+    flex-direction: column;
+
+    margin-bottom: 2px solid $tomato;
+}
+
+.paswword-reset {
+    margin: 30px;
+    cursor: pointer;
+    color: $tomato;
+}
+.reset-left p{
+    text-align: justify;
+    padding: 30px;
+}
+
+@media(max-width:768px) {
+    .reset-main {
+        display: $flex;
+        gap: 0px;
+    }
+    .reset-main {
+      
+        height: 100%;
+       
+    }
+}

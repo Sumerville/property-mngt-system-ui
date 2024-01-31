@@ -1,0 +1,91 @@
+@import "../Abstracts/colors";
+@import "../Abstracts/mixins";
+@import "../Abstracts/variables";
+
+.sidebar1 {
+
+    width: 14%;
+    height: 100vh;
+    position: fixed;
+    padding: 50px;
+    left: 0;
+    background: rgba(225, 225, 225, 0.1);
+    box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    transition: 0.5s;
+
+}
+.sidebar-header{
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    display: $flex;
+    justify-content: $justifyContent-b;
+    align-items: center;
+    padding: 0 10px;
+    transition: 0.5s;
+}
+.header-toggle {
+   cursor: pointer;
+    font-size: 25px;
+    color: $tomato;
+
+}
+
+.links {
+    text-decoration: none;
+    display: $flex;
+    gap: 5px;
+    margin-bottom: $spacing-md;
+    position: relative;
+
+    .links-icon {
+        // font-size: 20px;
+        position: absolute;
+        left: -20px;
+        color: $tomato;
+    }
+
+    .links-span {
+        // font-size: 18px;
+        color: $gray;
+    }
+}
+
+.link {
+    text-decoration: none;
+    display: $flex;
+    gap: 5px;
+    // margin-bottom: 30px;
+    // margin-top: 30px;
+    // .links-icon {
+    //     font-size: 22px;
+    //     color: $tomato;
+    // }
+
+    // .links-span {
+    //     font-size: 20px;
+    //     color: $gray;
+    // }
+}
+
+.activenav{
+    color: $white;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.activenav::before{
+    content: '';
+    position: absolute;
+    height: 35px;
+    width: 3px;
+    background: $white;
+    transition: 0.5s;
+}
+
+.shownav{
+    left: 0;
+}

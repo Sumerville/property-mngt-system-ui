@@ -1,0 +1,24 @@
+@import "../Abstracts/colors";
+@import "../Abstracts/mixins";
+@import "../Abstracts/variables";
+
+
+.profile-main{
+    width: 100%;
+    display: $flex;
+    padding-top: 95px;
+}
+
+.sidebar-comp{
+    width: 15%;
+    margin-right: 10px;
+}
+
+.profile-center-container{
+    width: 100%;
+    margin-left: 14px;
+}
+.profeed-container{
+    padding-top: 30px;
+    padding-bottom: 70%;
+}

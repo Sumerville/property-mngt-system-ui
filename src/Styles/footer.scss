@@ -1,0 +1,234 @@
+@import "../Abstracts/colors";
+@import "../Abstracts/mixins";
+@import "../Abstracts/variables";
+
+
+
+.footer {
+    width: $width-lg ;
+    min-height: $spacing-md * 21;
+    max-height: 100%;
+    background-color: $dark;
+    position: sticky;
+
+    .footer-top {
+        display: $flex;
+        justify-content: $justifyContent-b ;
+        flex-wrap: wrap;
+        padding: 0px 20px;
+        padding-top: 50px;
+
+        .footer-top-co1 {
+
+            .footer-adress {
+                display: $flex;
+                gap: $spacing-sm;
+                color: $tomato;
+                margin-bottom: $spacing-md;
+
+
+            }
+
+        }
+
+        .footer-top-col2 {
+            .links {
+                text-decoration: none;
+            }
+
+            .footer-links h4 {
+                color: $tomato;
+                margin-bottom: $spacing-md;
+            }
+
+            .footer-links p {
+                color: $tomato;
+                margin-bottom: $spacing-md;
+            }
+
+        }
+
+    }
+}
+
+
+
+
+
+.footer-top-col3 {
+    display: $flex;
+    gap: $spacing-sm;
+    flex-wrap: wrap;
+
+    .footer-s-media {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background: $white;
+        overflow: hidden;
+        border-radius: 60px;
+        color: $tomato;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+
+}
+
+
+.media-name {
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 15px;
+}
+
+.footer-s-media:hover {
+    width: 200px;
+}
+
+.media-name i {
+
+
+    font-size: 25px;
+    line-height: 50px;
+}
+
+.footer-s-media:nth-child(1):hover .media-name {
+    color: $facebook;
+    transform: scale(1.8);
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    padding-top: 6px;
+}
+
+.footer-s-media:nth-child(2):hover .media-name {
+    color: $instagram;
+    transform: scale(1.8);
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    padding-top: 6px;
+}
+
+.footer-s-media:nth-child(3):hover .media-name {
+    color: $youtube;
+    transform: scale(1.8);
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    padding-top: 6px;
+}
+
+.footer-s-media:nth-child(4):hover .media-name {
+    color: $twitter;
+    transform: scale(1.8);
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    padding-top: 6px;
+}
+
+.footer-s-media:nth-child(5):hover .media-name {
+    color: $github;
+    transform: scale(1.8);
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    padding-top: 6px;
+}
+
+.footer-s-media .media-name {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    line-height: 40px;
+    box-sizing: border-box;
+}
+
+.footer-s-media span {
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 60px;
+    color: $dark;
+}
+
+.news-letter {
+    color: $tomato;
+
+    h4 {
+        margin-bottom: $spacing-md;
+    }
+}
+
+.Input-box {
+    position: relative;
+    width: 300px;
+}
+
+.Input-box input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid $tomato;
+    background-color: $dark;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1em;
+    transition: 0.5s;
+    color: $tomato;
+}
+
+.Input-box span {
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    color: $tomato;
+    font-size: 1em;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.Input-box input:valid~span,
+.Input-box input:focus~span {
+    color: $white;
+    transform: translateX(1px) translateY(-7px);
+    font-size: 0.65em;
+    padding: 0 15px;
+    background-color: $dark;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    letter-spacing: 0.2em;
+}
+
+.Input-box input:valid,
+.Input-box input:focus {
+    border: 1.2px solid #fff;
+}
+
+.footer-btn {
+    margin-top: $spacing-md;
+}
+
+.footer-bottom {
+    width: $width-lg;
+    height: $spacing-md * 3;
+    margin-top: $spacing-lg * 3;
+    padding-bottom: $spacing-md *4;
+    padding-left: $spacing-sm;
+    padding-right: $spacing-sm;
+    color: $tomato;
+
+    p {
+        display: $flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: $marginTop-md * 2;
+        letter-spacing: $spacing-xsm;
+        font-size: $spacing-md - 2;
+    }
+
+}
+
+@media(max-width:650px){
+    .news-letter{
+        margin-top: 30px;
+        margin-left: 30px;
+    }
+}

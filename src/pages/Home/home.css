@@ -1,0 +1,68 @@
+/* * {
+  margin: 0;
+  padding: 0;
+}
+
+.home-main {
+  background-color: #fff;
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+.home-main .home-container {
+  display: flex;
+  justify-content: space-around;
+}
+.home-main .home-content1 {
+  margin-top: 20px;
+}
+.home-main .home-content2 {
+  margin-top: 20px;
+}
+.home-main .home-content3 {
+  margin-top: 20px;
+}
+.home-main .btn1 {
+  cursor: pointer;
+  border-radius: 10px;
+  margin: 200px;
+  padding: 10px 10px;
+  text-transform: uppercase;
+  border: 2px solid #ff6347;
+  background: #ff6347;
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+  width: 350px;
+  height: 100px;
+}
+.home-main .btn1:hover {
+  transform: scale(1.01);
+  border: 1px solid #8df8b1;
+}
+.home-main .btn1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #8df8b1;
+  transition: 0.4s all ease-in-out 0s;
+  border-radius: 10px;
+}
+.home-main .btn1::before {
+  left: unset;
+  right: 0;
+  width: 0;
+  border-radius: 10px;
+}
+.home-main .btn1:hover::before {
+  right: unset;
+  left: 0;
+  width: 100%;
+  border-radius: 10px;
+}
+
+# sourceMappingURL=home.css.map */

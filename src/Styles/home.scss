@@ -1,0 +1,141 @@
+@import"../Abstracts/colors";
+@import"../Abstracts/mixins";
+@import"../Abstracts/variables";
+
+* {
+    margin: $margin;
+    padding: $padding;
+    box-sizing: border-box;
+}
+.slider-container{
+    position: relative;
+}
+.buy-btn{
+    position: absolute;
+    top: 90%;
+    z-index: 999;
+    left: 30px;
+}
+.home-main{
+    position: relative;
+}
+.countup-section {
+    display: $flex;
+    justify-content: $justifyContent-center;
+    align-items: center;
+margin-bottom: $spacing-md;
+    gap: $spacing-lg * 4;
+}
+
+.countup-section .count {
+    font-weight: bold;
+}
+
+.count-up,
+.count-up-span {
+    color: $tomato;
+}
+
+.count-up {
+    font-size: 50px;
+    margin-bottom: 5px;
+}
+
+.count-up-span {
+    position: relative;
+    margin-top: 5px;
+    font-size: 22px;
+    color: $gray;
+}
+
+.count-up-color {
+    color: $gray;
+}
+.home-content-top {
+    width: 80%;
+    margin: auto;
+    display: $flex;
+    flex-direction: column;
+    justify-content: $justifyContent-center;
+    align-items: center;
+}
+
+.home-content-top h1 {
+    margin: $spacing-lg;
+    font-size: $spacing-lg * 1.5;
+    color: $gray;
+}
+
+.home-content-top span {
+    color: $tomato;
+    font-weight: 800;
+    font-size: $spacing-lg * 2;
+}
+
+.home-content-top p {
+    display: $flex;
+    justify-content: $justifyContent-center;
+    align-items: center;
+    text-align: center;
+}
+
+.home-content2 {
+    display: flex;
+}
+
+.home-sidebar {
+    margin-top: $spacing-lg * 6;
+    width: 10%;
+    border: 1px solid $tomato;
+}
+
+.home-property {
+    width: 82%;
+    margin: auto;
+}
+
+@media(max-width:800px) {
+    .countup-section {
+        margin: 20px;
+        gap: $spacing-lg + 20px;
+    }
+
+    .count-up {
+        font-size: 30px;
+    }
+
+    .count-up-span {
+        font-size: 17px;
+    }
+
+}
+
+@media(max-width:600px) {
+    .countup-section {
+        gap: $spacing-lg * 2;
+    }
+
+    .count-up {
+        font-size: 30px;
+    }
+
+    .count-up-span {
+        font-size: 16px;
+    }
+}
+
+@media(max-width:430px) {
+    .countup-section {
+        display: $flex;
+        flex-wrap: wrap;
+        margin: 10px;
+    }
+
+    .count-up {
+        font-size: 30px;
+    }
+
+    .count-up-span {
+        font-size: 16px;
+    }
+}

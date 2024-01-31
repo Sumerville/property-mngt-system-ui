@@ -1,0 +1,23 @@
+
+
+.star{
+    cursor: pointer;
+    font-size: 30px;
+}
+
+input[type=radio]{
+    display: none;
+}
+.rating-span{
+    position: absolute;
+    color: #ff6347;
+    padding-left: 10px;
+top: 8px;
+}
+
+@media(max-width:375px){
+    .star{
+        cursor: pointer;
+        font-size: 20px;
+    }  
+}
