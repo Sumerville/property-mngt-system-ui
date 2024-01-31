@@ -82,14 +82,7 @@ const Index = () => {
 
                 {dropdown ? (
                   <div>
-                 {/* {types.map((type, index)=>{
-                  return(
-
-                    <ul className='city-cat' key={index}>
-                    <li className='test'>{type}</li>
-                   </ul>
-                  )
-                 })} */} 
+                 
                   </div>
                 
                 ) : ""
