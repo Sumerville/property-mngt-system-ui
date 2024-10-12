@@ -1,0 +1,108 @@
+@import "../../Abstracts/colors";
+@import "../../Abstracts/mixins";
+@import "../../Abstracts/variables";
+
+.form-container{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  width: 100%;
+}
+
+
+.form{
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 420px;
+}
+
+.add-form{
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 520px;
+}
+form h4{
+    margin-bottom: 20px;
+    text-align: center;
+    color: $tomato;
+}
+.verify-div{
+    margin: 20px;
+}
+.verify-link{
+    text-decoration: none;
+    text-align: center;
+    color: $tomato;
+}
+.add-form h2{
+    margin-bottom: 20px;
+    text-align: center;
+}
+.form .form-group{
+    margin-bottom: 15px;
+}
+
+.add-form .form-group{
+  
+    gap: 10px;
+    /* margin-bottom: 15px; */
+}
+.contact-icon{
+ margin-left: 10px;
+    font-size: 16px;
+}
+.form .form-group label{
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.form .form-group input{
+width: 90%;
+max-width: 100%;
+height: 50px;
+border: 1px solid $tomato;
+border-radius: 8px;
+padding: 0 20px;
+outline: none;
+margin-bottom: 20px;
+}
+
+.add-form .form-group input::placeholder{
+    color: #2b2a2a;
+}
+.add-form .form-group input:focus{
+    outline: none;
+}
+
+
+.add-form .form-group{
+    margin-bottom: 15px;
+}
+.add-form .form-group label{
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.error-text{
+    position: absolute;
+    color: red;
+    margin-top: 60px;
+    left: 45%;
+}
+.verify-error{
+    position: relative;
+    color: red;
+    margin: 20px;
+    
+}

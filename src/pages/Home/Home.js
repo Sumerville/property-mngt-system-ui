@@ -80,7 +80,7 @@ const Home = () => {
               </div> */}
 
               <div className='home-property'>
-                <Properties />
+              <Properties />
               </div>
 
 

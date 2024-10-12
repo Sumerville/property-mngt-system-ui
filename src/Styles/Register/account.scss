@@ -152,6 +152,9 @@
     cursor: pointer;
 }
 
+.preloder-resize{
+    width: 100px;
+}
 .log-btn {
     margin: $spacing-lg;
 }
@@ -161,7 +164,13 @@
   
    
 }
-
+.error{color: red;
+position: absolute;
+top: 2%;
+}
+.logerror{color: red;
+ 
+    }
 .form-container-log input {
     width: 430px;
     max-width: 100%;

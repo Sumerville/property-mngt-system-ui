@@ -5,6 +5,7 @@ import "../../Styles/contact.scss";
 import Register from '../../Components/Forms/Register';
 // import Modal from "../../Components/Modal/Modal"
 import { useState } from 'react';
+import Carousel from '../../Components/Carousel/Carousel';
 
 const Contact = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -17,8 +18,8 @@ const Contact = () => {
         {openModal && <Modal closeModal={setOpenModal}/>} 
         </div>
      <Register/>
-     
       </div> */}
+      <Carousel/>
       <div className='contact-footer-compatment'>
       <Footer/>
       </div>

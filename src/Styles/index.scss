@@ -11,12 +11,14 @@
     position: relative;
     margin: 0 5px;
 }
-.rent-btn{
+
+.rent-btn {
     position: absolute;
     top: 90%;
     z-index: 999;
     left: 30px;
 }
+
 .footer-container {
     width: 100%;
 
@@ -41,7 +43,8 @@
     align-items: center;
     gap: 30px;
 }
-.input-container{
+
+.input-container {
     position: relative;
 }
 
@@ -63,14 +66,16 @@
     font-size: $spacing-md;
     color: $grey;
 }
-.right-top-header{
+
+.right-top-header {
     width: 100%;
-  
+
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
-   
+
 }
-.index-filters{
+
+.index-filters {
     display: $flex;
     justify-content: $justifyContent-center;
     align-items: center;
@@ -85,15 +90,19 @@
 
 }
 
-.header-bottom{
+.header-bottom {
     display: $flex;
     justify-content: $justifyContent-even;
- 
+
 }
-.header-bottom .col-1, .col-2, .col-3{
+
+.header-bottom .col-1,
+.col-2,
+.col-3 {
     color: $tomato;
 }
-.header-bottom ul{
+
+.header-bottom ul {
     width: 200px;
     height: auto;
     padding: $spacing-sm;
@@ -105,37 +114,41 @@
     backdrop-filter: blur(1px);
     border-radius: 10px;
     z-index: 500;
-   
+
     position: absolute;
 }
 
 
-.header-bottom ul li{
+.header-bottom ul li {
     list-style: none;
     padding: $spacing-xsm;
     cursor: pointer;
 }
-.test{color: red;
-display: flex;
-justify-content: center;
-flex-direction: column;
-align-items: center;
-}
-.header-bottom ul li:hover{
-border-left: 4px solid $tomato;
+
+.test {
+    color: red;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
-.chevron-down{
-   margin-left: $spacing-sm;
-   color: $tomato;
-   cursor: pointer;
+.header-bottom ul li:hover {
+    border-left: 4px solid $tomato;
 }
+
+.chevron-down {
+    margin-left: $spacing-sm;
+    color: $tomato;
+    cursor: pointer;
+}
+
 .home-right-container {
     padding-top: $spacing-lg;
     width: 100%;
     display: $grid;
     grid-template-columns: repeat(3, 1fr);
-   flex-wrap: wrap;
+    flex-wrap: wrap;
     gap: 20px;
 
 }
@@ -152,12 +165,20 @@ border-left: 4px solid $tomato;
 }
 
 .img-box {
-    width: 100%;
+    // width: 100%;
     position: relative;
     height: 400px;
-    max-width: 100%;
+  
     border-radius: 15px;
 
+}
+
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
 }
 
 .bldg-particulars {
@@ -186,7 +207,7 @@ border-left: 4px solid $tomato;
     padding: 20px;
 }
 
-.bldg-particulars ul button{
+.bldg-particulars ul button {
     margin-top: 20px;
 }
 
@@ -235,16 +256,19 @@ border-left: 4px solid $tomato;
     border-top-left-radius: 0;
 
 }
-.new-price-cont{
+
+.new-price-cont {
     display: flex;
     justify-content: space-evenly;
 }
-.new-price-cont li{
+
+.new-price-cont li {
     list-style: none;
     font-size: 20px;
     font-weight: 500;
     color: $white;
 }
+
 .price-container .price {
     position: absolute;
     width: 50%;
@@ -287,24 +311,18 @@ border-left: 4px solid $tomato;
     display: block;
     border-radius: $spacing-xsm + 3px;
     // font-weight: 500;
-    
+
 }
-.new-price h4{
+
+.new-price h4 {
     text-decoration: line-through;
     color: $white;
 }
-.price-container .price .naira{
+
+.price-container .price .naira {
     font-size: 22px;
 
 }
-.img-box img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    border-radius: 15px;
-}
-
 
 
 @media (max-width:1433px) {
@@ -318,7 +336,8 @@ border-left: 4px solid $tomato;
     .grid-card {
         width: 310px;
     }
-    .right-top .input-container .search-input{
+
+    .right-top .input-container .search-input {
         width: 400px;
     }
 }
@@ -390,7 +409,8 @@ border-left: 4px solid $tomato;
         width: 100%;
 
     }
-    .right-top .input-container .search-input{
+
+    .right-top .input-container .search-input {
         width: 300px;
     }
 }
@@ -404,35 +424,43 @@ border-left: 4px solid $tomato;
         height: 260px;
         top: 8%;
     }
-    .right-top{
-    display: $block;
-   
+
+    .right-top {
+        display: $block;
+
     }
-    .home-main-container{
-padding-top: 800px;
+
+    .home-main-container {
+        padding-top: 10px;
     }
-   .index-filters{
-    margin-top: $spacing-md;
-   }
-   .right-top .input-container .search-input{
-    width: 100%;
+
+    .index-filters {
+        margin-top: $spacing-md;
+    }
+
+    .right-top .input-container .search-input {
+        width: 100%;
+    }
 }
-}
-@media(max-width:510px){
+
+@media(max-width:510px) {
     .price-container .price p {
-  font-size: 10px;
+        font-size: 10px;
         padding: 16px 9px;
     }
 }
 
 @media(max-width:470px) {
-   
-    .header-bottom{
-    display: $block;
-  width: 100%;
-     
+
+    .header-bottom {
+        display: $block;
+        width: 100%;
+
     }
-    .header-bottom .col-1, .col-2, .col-3{
+
+    .header-bottom .col-1,
+    .col-2,
+    .col-3 {
         margin-bottom: $spacing-sm;
     }
 }
@@ -448,8 +476,14 @@ padding-top: 800px;
         padding: 10px 10px;
     }
 
-    .price-container .price .naira{
+    .price-container .price .naira {
         font-size: 16px;
-    
+
+    }
+
+    @media(max-width:425px) {
+        .img-box img {
+            width: auto;
+        }
     }
 }

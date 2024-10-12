@@ -12,8 +12,8 @@ const HouseContextProvider = ({children}) => {
     const [types, setTypes] = useState([]);
     const [price, setPrice] = useState('price range (any)');
     const [loading, setLoading] = useState(false);
-    // console.log(houses)
-
+  
+  // remove line 17 to 26 later
     useEffect(()=>{
       const allCities =houses.map((house)=>{
         return house.location;
@@ -29,9 +29,9 @@ const HouseContextProvider = ({children}) => {
       const allTypes = houses.map((type)=>{
         return type.type;
       });
-      console.log(allTypes)
+        //console.log(allTypes)
       const uniqueTypes =[ ... new Set(allTypes)];
-      console.log(uniqueTypes)
+        //console.log(uniqueTypes)
       setTypes(uniqueTypes)
  
     },[]); 

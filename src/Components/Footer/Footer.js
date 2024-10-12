@@ -8,6 +8,8 @@ import { BsTwitterX } from "react-icons/bs";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoLocation, IoMail } from "react-icons/io5";
 import Spinner from "../Spinner/Spinner";
+import ReactWhatsapp from "react-whatsapp";
+import { IoLogoWhatsapp } from "react-icons/io";
 function Footer() {
   const date = new Date();
   const year = date.getFullYear();
@@ -91,12 +93,14 @@ function Footer() {
             </div>
             <span>Twitter-X</span>
           </div>
-          <div className="footer-s-media">
-            <div className="media-name">
-              <i>  <FaGithub /></i>
-            </div>
-            <span>Github</span>
-          </div>
+          <ReactWhatsapp number="+234 8033149019" className="footer-s-media">
+            
+              <div className="media-name">
+                <i><IoLogoWhatsapp className="whats-app-icon" /></i>
+              </div>
+              <span>WhatsApp</span>
+            
+          </ReactWhatsapp>
         </div>
         <div className="footer-top-col4">
           <div className="footer-form">

@@ -8,6 +8,10 @@ import axios from "axios";
 import Preloader from '../../Components/Preloader/Preloader';
 import Modal from '../../Components/Modals/Modal';
 import PasswordReset from '../../Components/Modals/PasswordReset';
+import {toast} from "react-toastify";
+import Spinner from '../../Components/Spinner/Spinner';
+import Loader from '../../Components/Loader/Loader';
+import ValidateForm from '../../Components/Validation/ValidateForm';
 import {
   IoKeySharp, IoPersonSharp, IoLockClosed, IoPersonAdd,
   IoLocationSharp, IoLocationOutline,
@@ -28,9 +32,9 @@ const CreateAccout = () => {
   const [storeData, setStoreData] = useState([]);
   const [loading, setLoading] = useState(false)
   const [err, setErr] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState({});
   const [showpassword, setShowpassword] = useState(false);
-
+  const [serverErrors, setServerErrors] = useState([]);
   const handleShowpass = ()=>{
 setShowpassword(prev => !prev)
   }
@@ -79,38 +83,29 @@ setShowpassword(prev => !prev)
     }
     if (!values.password.trim()) {
       errors.password = "Password is Required"
-    } else if (values.password.length < 6) {
-      errors.password = "Password Must be six characters and above"
+    } else if (values.password.length < 8) {
+      errors.password = "Password Must be 8 characters and above"
     }
     setErr(errors);
     return Object.keys(errors).length === 0;
   };
 
-  const validateLogForm = () => {
-    const errors = {};
-    if (!logval.email.trim()) {
-      errors.email = "Email is Required";
-    } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(logval.email)) {
-      errors.email = "Invalid email address";
-    }
-    if (!logval.password.trim()) {
-      errors.password = "Password is Required"
-    } else if (logval.password.length < 6) {
-      errors.password = "Password Must be six characters and above"
-    }
-    setError(errors);
-    return Object.keys(errors).length === 0;
-  }
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true)
+
     try {
       const isFormValid = validateForm();
       if (isFormValid) {
-        const res = await axios.post("http://localhost:5000/api/auth/account", values);
+        setLoading(true)
+        const res = await axios.post("http://localhost:5001/api/v1/auth/register", values);
         console.log(res)
         if (res?.data) {
-          alert("User Added")
+          toast.success("Account Created Successfully",{
+            position:"top-right",
+            autoClose:5000
+          
+        })
           setLoading(false)
           setValues({
             userName: "",
@@ -126,31 +121,51 @@ setShowpassword(prev => !prev)
         );
       }
 
-    } catch (error) {
-      console.error("Error creating User:", error);
+    } catch (err) {
+      setLoading(false)
+      if(err.response.data.errors){
+        setServerErrors(err.response.data.errors)
+        toast.error(err.response.data.errors,{
+          position:"top-right",
+          autoClose:5000
+        
+      })
+    }else{
+        console.log(err)
+    }
     }
   }
 
   const handleSignin = async (e) => {
     e.preventDefault();
-    setLoading(true)
+    const errs = ValidateForm(logval)
+    setError(errs)
     try {
-      const isFormValid = validateLogForm();
-      if (isFormValid) {
-        const res = await axios.post("http://localhost:5000/api/auth/signin", logval);
+      if (errs.email ==="" && errs.password ==="") {
+        setLoading(true)
+        const res = await axios.post("http://localhost:5001/api/v1/auth/login", logval);
         if (!res.error) {
           localStorage.setItem('user', JSON.stringify(res));
+     
           navigate('/')
           setErr(true)
+      setLoading(false)
+        }else if(res.errors){
+          setServerErrors(res.errors)
         }
       } else {
         setFormErrorMessage(
           "Please fill in all required fields and correct any validation errors."
         );
       }
+      
+    } catch (err) {
+      setLoading(false)
+      if(err.response.data.errors){
+        setServerErrors(err.response.data.errors)
+   
+    }
 
-    } catch (error) {
-      console.log(error)
     }
   }
   return (
@@ -176,7 +191,7 @@ setShowpassword(prev => !prev)
                   <input type='text' placeholder='USER NAME'
                     autoComplete='off'
                     name="userName"
-                    className='test'
+                 
                     value={values.userName} onChange={handleChange}
                   />
                   {err.userName && (<span className="error-text-span">{err.userName}</span>)}
@@ -206,10 +221,15 @@ setShowpassword(prev => !prev)
                     value={values.password} onChange={handleChange}
                   />
                   {err.password && (<span className="error-text-span">{err.password}</span>)}
+                  {
+                    serverErrors.map((error, index)=>(
+                        <h2 className="error" key={index}>{error.msg}</h2>
+                    ))
+                }
                   <div className='reg-btn'>
-                    <button className='btn-2'>Register</button>
+                    <button className='btn-2'>{loading?<Preloader/>:"Register"}</button>
                   </div>
-
+                 
                 </form>
               </div>
 
@@ -236,13 +256,21 @@ setShowpassword(prev => !prev)
                   value={logval.password} onChange={handleLog}
                 />
                 {error.password && (<span className="error-text-span">{error.password}</span>)}
+                {
+                    serverErrors.map((error, index)=>(
+                        <h2 className="logerror" key={index}>{error.msg}</h2>
+                    ))
+                }
                <Link to="/reset-page" className='links'>
                 <p className='paswword-reset' 
                 >Forgot Your Password?</p>
                 </Link>
-               
-                <div className='log-btn'>
-                  <button className='btn-2' onClick={handleSignin}>Sign In</button>
+                <Link to="/verify-account" className='links'>
+                <p className='paswword-reset' 
+                >Verify Your Account?</p>
+                </Link>
+                <div className='log-btn preloder-resize'>
+                  <button className='btn-2' onClick={handleSignin}>{loading? <Preloader/>:"Sign In"}</button>
                 </div>
               </form>
             </div>}
@@ -262,7 +290,7 @@ setShowpassword(prev => !prev)
                   </div>
                   <h2 className='toggle-head'>Hello!</h2>
 
-                  <p className='toggle-text'>Don't Have An Account?</p>
+                  <p className='toggle-text'>Don&apos;t Have An Account?</p>
                   <div className='ghost'>
                     <button onClick={toggleform}>Sign Up</button>
                   </div>

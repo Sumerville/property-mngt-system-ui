@@ -6,11 +6,34 @@ import { TbCurrencyNaira } from "react-icons/tb"
 import { Data } from "../../assets/Data/Data";
 import { useNavigate } from 'react-router-dom';
 import "../../Styles/button.scss";
-import "../../Styles/slider.scss"
+import "../../Styles/slider.scss";
+import axios from "axios";
+import Preloader from '../../Components/Preloader/Preloader';
 const Slider = ({type}) => {
  const [changebtn, setChangebtn] = useState(false)
     const [currentSlide, setCurrentSlide] = useState(0);
-    const slideLength = Data.length;
+    const [buildings, setbuildings] = useState([]);
+    const [loading, setLoading] = useState(false);
+   
+    useEffect(()=>{
+        try {
+          setLoading(true)
+          const res = axios.get("http://localhost:5001/api/v1/buildings/allBuildings").then((result)=>{
+            if(result.data){
+              setbuildings(result.data)
+           
+              setLoading(false)
+            }
+         console.log(result.data)
+          })
+        } catch (err) {
+          console.log(err)
+          setLoading(false)
+        }
+        },[]);
+
+
+    const slideLength = buildings.length;
     const autoScroll = true
     let sliderInterval;
     const sliderTime = 5000
@@ -50,7 +73,7 @@ return()=>clearInterval(sliderInterval)
                 </div>
 
             </div>
-            {type ==="buy"? <Link to="/listing">
+            {/* {type ==="buy"? <Link to="/listing">
            <div className='slider-btn'>
            <button className='btn-3'
              >Buy</button> 
@@ -60,15 +83,16 @@ return()=>clearInterval(sliderInterval)
            <button className='btn-3'
              >Rent</button> 
            </div>
-           </Link>}
-            {Data.map((slide, index) => {
-                const { image, title, price, location } = slide
+           </Link>} */}
+            {buildings.map((slide, index) => {
+                // const { image, title, price, location } = slide
                 return (
                     <div key={index} className={index === currentSlide ? " slide current" : " slide"}>
                         {index === currentSlide && (
                             <>
-                            <Link to={`/single-page/${slide?.id}`}>
-                            <img src={image} alt="pix" className='slider-img' />
+                          
+                            <Link to={`/single-page/${slide?._id}`}>
+                            <img src={slide.pix} alt="pix" className='slider-img' />
                             </Link>
                               
                              
@@ -77,22 +101,17 @@ return()=>clearInterval(sliderInterval)
                                     <span className='span2'></span>
                                     <span className='span3'></span>
                                     <span className='span4'></span>
-                                    <h4 className='price'><TbCurrencyNaira className='currency'/>{price}</h4>
-                                    <h2 className='title'>{title}</h2>
-                                    <p className='location'>{location}</p>
-                                    {/* <div className='slider-btn'>
-                                    <button className='btn-2'
-                                        onClick={() => navigate("/page")}
-                                    >Explore</button> 
-                                    </div>  */}
-                                    
+                                    <h4 className='price'>{slide.branchId.landlordName}</h4>
+                                    <h2 className='title'>{slide.title}</h2>
+                                    <p className='location'>{slide.situated}</p>
+                                   
                                     </div>
 
                                  
                                   
                             </>
                         )}
-                                  
+                                
                     </div>
                 )
             })}

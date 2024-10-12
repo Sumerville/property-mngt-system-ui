@@ -50,12 +50,14 @@
     margin-bottom: 20px;
     font-size: 20px;
 }
-.left-col-btm .col{
+
+.left-col-btm .col {
     display: $flex;
     justify-content: $justifyContent-b;
     padding: 10px;
     margin-bottom: 20px;
 }
+
 .single-img {
     width: 100%;
     height: 600px;
@@ -71,7 +73,7 @@
 
 }
 
-.single-icons{
+.single-icons {
     padding: 2px;
     position: relative;
     top: 4px;
@@ -79,7 +81,8 @@
     color: $tomato;
 }
 
-.single-landlord, .single-title{
+.single-landlord,
+.single-title {
     display: $flex;
     justify-content: $justifyContent-center;
     align-items: center;
@@ -87,73 +90,94 @@
     color: $tomato;
 }
 
-.cut-off-text{
-    --max-lines:2;
-  --line-height:1.4;
+.cut-off-text {
+    --max-lines: 2;
+    --line-height: 1.4;
     overflow: hidden;
     max-height: calc(var(--max-lines)* 1em *var(--line-height));
     line-height: var(--line-height);
     position: relative;
-  
+
 }
 
 
-.cut-off-text::before{
+.cut-off-text::before {
     content: "";
     position: absolute;
     height: calc(2em * var(--line-height));
     width: 100%;
     pointer-events: none;
-  
+
 }
 
-.expand-btn{
+.expand-btn {
     appearance: none;
     border: 1px solid $tomato;
     padding: .5em;
     border-radius: .25em;
     cursor: pointer;
-   
+
 }
 
-.expand-btn::before{
-   content: "Read More";
-   color: $tomato;
+.expand-btn::before {
+    content: "...Read More";
+    color: $tomato;
 }
-.expand-btn:checked::before{
+
+.expand-btn:checked::before {
     content: "Read Less";
- }
+}
 
- .cut-off-text:has(+ .expand-btn:checked){
+.cut-off-text:has(+ .expand-btn:checked) {
     max-height: none;
- }
+}
 
-@media(max-width:1056px){
+.whatsapp {
+    display: $flex;
+    border-radius: 4px;
+    padding-top: $spacing-sm;
+    outline: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+ 
+}
+.whatsaap-span{
+    padding-top: $spacing-lg;
+}
+.whatsapp-icon {
+    margin: $spacing-md;
+    color: $whatsapp;
+    font-size: 40px;
+
+}
+
+@media(max-width:1056px) {
     .singlepage-container {
         width: 90%;
         margin: auto;
         margin-top: 100px;
         margin-bottom: 10px;
         display: $flex;
-    flex-wrap: wrap;
+        flex-wrap: wrap;
     }
 }
 
-@media(max-width:538px){
-    .left-col-btm li{
-font-size: 16px;
+@media(max-width:538px) {
+    .left-col-btm li {
+        font-size: 16px;
     }
 
-    .single-icons{
+    .single-icons {
         font-size: 18px;
     }
 }
 
-@media(max-width:462px){
-    .left-col-btm .col{
+@media(max-width:462px) {
+    .left-col-btm .col {
         display: $block;
-       
-     
+
+
         margin-bottom: 10px;
     }
 }

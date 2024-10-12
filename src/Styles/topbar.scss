@@ -20,15 +20,15 @@
 
 .nav-left {
     flex: 2;
-    margin-top: $spacing-lg;
+    margin-top: $spacing-sm;
     margin-left: $spacing-md + 10px;
     display: $flex;
     gap: $spacing-sm;
 }
 .nav-left img{
     width: $spacing-lg + 30px;
-    height: $spacing-lg + 30px;
-    margin-bottom: $spacing-md;
+    height: $spacing-lg + 40px;
+    margin-bottom: $spacing-sm;
 }
 .nav-left span{
 margin-top: $spacing-md;

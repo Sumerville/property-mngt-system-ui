@@ -126,11 +126,12 @@
 }
 
 .footer-s-media:nth-child(5):hover .media-name {
-    color: $github;
-    transform: scale(1.8);
+    color: $whatsapp;
+    transform: scale(1.6);
     transition: 0.5s;
     transition-delay: 0.5s;
     padding-top: 6px;
+    padding-left: 6px;
 }
 
 .footer-s-media .media-name {
@@ -149,6 +150,17 @@
     color: $dark;
 }
 
+.whats-app-icon{
+    width: 30px;
+    margin-right: 3px;
+    margin-bottom: 2px;
+}
+.sumer-whatsapp{
+    outline: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
 .news-letter {
     color: $tomato;
 

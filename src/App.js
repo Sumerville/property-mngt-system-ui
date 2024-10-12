@@ -10,10 +10,15 @@ import SinglePage from './pages/SinglePage/SinglePage';
 import CreateAccout from './pages/Register-Page/CreateAccout';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import Resetpage from './pages/ResetPage/Resetpage';
+import Verification from './pages/Register-Page/Verification';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
+  
     <div className="App">
+<ToastContainer/>
      <BrowserRouter>
      <Routes>
      <Route path="/" element={<Home/>}> </Route>
@@ -25,6 +30,8 @@ function App() {
      <Route path="/single-page/:id" element={<SinglePage/>}> </Route>
      <Route path="/profile-page/" element={<ProfilePage/>}> </Route>
      <Route path="/reset-page/" element={<Resetpage/>}> </Route>
+     <Route path="/register/" element={<Signup/>}> </Route>
+     <Route path="/verify-account/" element={<Verification/>}> </Route>
      </Routes>
      </BrowserRouter>
     
